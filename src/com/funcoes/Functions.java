@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Random;
 
 public class Functions {
 
@@ -259,6 +260,12 @@ public class Functions {
 		return embaralhado.toString();
 	}
 	
+	/**
+	 * Desenha moldura de acordo com o número de colunas e linhas 
+	 * @param colunas
+	 * @param linhas
+	 * @return texto.toString();
+	 */
 	public static String desenhaMoldura(int colunas, int linhas) {
 		
 		StringBuilder texto = new StringBuilder();
@@ -292,5 +299,66 @@ public class Functions {
 		}
 
 		return texto.toString();
+	}
+	
+	public static int[] sorteiaParDados() {
+		Random rand = new Random();
+		
+		int[] dados = {rand.nextInt(1, 13), rand.nextInt(1, 13)};
+		
+		return dados;
+	}
+	
+	public static boolean verificaNatural(int[] dados) {
+		int[] valoresParaSerNatural = {7, 11};
+		
+		for (int i = 0; i < dados.length; i++) {
+			for (int j = 0; j < valoresParaSerNatural.length; j++) {
+				if (dados[i] == valoresParaSerNatural[j]) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	public static boolean verificaCraps(int[] dados) {
+		int[] valoresParaCraps = {2, 3, 12};
+		
+		for (int i = 0; i < dados.length; i++) {
+			for (int j = 0; j < valoresParaCraps.length; j++) {
+				if (dados[i] == valoresParaCraps[j]) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	public static int verificaPrimeiroPonto(int[] dados) {
+		int[] valoresParaPontuar = {4, 5, 6, 8, 9, 10};
+		
+		for (int i = 0; i < dados.length; i++) {
+			for (int j = 0; j < valoresParaPontuar.length; j++) {
+				if (dados[i] == valoresParaPontuar[j]) {
+					return dados[i];
+				}
+			}
+		}
+		
+		return 0;
+	}
+	
+	public static boolean verificaPontoFinal(int[] dados, int primeiroPonto) {
+		
+		for (int i = 0; i < dados.length; i++) {
+			if (dados[i] == primeiroPonto) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }
