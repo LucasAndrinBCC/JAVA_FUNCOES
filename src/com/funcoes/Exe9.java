@@ -1,23 +1,24 @@
-package com.exe1;
+package com.funcoes;
 
 import java.util.Scanner;
 
 /**
  * 
  * @author Lucas Andrin
+ * Reverso do número. Faça uma função que retorne o reverso de um número inteiro
+ * informado. Por exemplo: 127 -> 721.
  * 
- * Faça uma função que informe a quantidade de dígitos de um determinado número
- * inteiro informado.
  */
-public class Exe8 {
+public class Exe9 {
 
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 		
 		System.out.print("Entre com um número inteiro: ");
+		
 		int num = entrada.nextInt();
 		
-		System.out.println("Quantidade de dígitos: " + Functions.numeroLength(num));
+		System.out.println(Functions.inverseNumber(num));
 		
 		entrada.close();
 	}

@@ -1,4 +1,4 @@
-package com.exe1;
+package com.funcoes;
 
 import java.text.ParseException;
 import java.util.Scanner;
